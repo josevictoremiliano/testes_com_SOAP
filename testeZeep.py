@@ -6,15 +6,8 @@ client = zeep.Client(wsdl=wsdl_url)
 
 country_code = "BR"
 
-result = client.service.CountryIntPhoneCode(
-	sCountryISOCode=country_code
-)
-print(f"O código de telefone do {country_code} é {result}")
-
-country_code = "US"
-
-result = client.service.CountryIntPhoneCode(
+result = client.service.CapitalCity(
 	sCountryISOCode=country_code
 )
 
-print(f"O código de telefone do {country_code} é {result}")
+print(f"Mostrando a capital de(a) {country_code} é {result}")
