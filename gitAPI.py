@@ -3,18 +3,15 @@ from requests.auth import HTTPBasicAuth
 from getpass import getpass
 
 
-password = "TOKEN DO GITHUB https://github.com/settings/tokens?type=beta"
-username = input("Digite seu username: ")
+password = "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"
+username = 'josevictoremiliano'
   
 url = "https://api.github.com/user/following/" + username
+print(url)
 
-response = requests.put(url,
+
+response = requests.get(url,
             auth = HTTPBasicAuth('josevictoremiliano', password))
 
+print(response.json())
 
-print(response.status_code)
-
-if response.status_code == 204:
-    print("Success")
-else:
-    print("Failed")
